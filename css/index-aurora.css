@@ -1,0 +1,978 @@
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Poppins:wght@400;500&family=Roboto+Neon&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Roboto', 'Dangrek', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+}
+
+#background-video {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/*#background-video { display: none; } Se debe quitar esta linea*/
+
+@media (max-width: 750px) {
+  #background-video { display: none; }
+  body {
+        background-color: rgba(173, 254, 234, 0.735);
+        background-size: cover;
+    }
+}
+
+.c-global{
+    position: absolute;
+    background: linear-gradient(rgba(27, 39, 59, 0.9), rgba(1, 1, 8, 0.9));
+    width: 600px;
+    height: 700px;    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    border-radius: 1em;
+    box-shadow: 0.15em 0.4em 0.8em rgb(4, 1, 23);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.c-login{
+    position: absolute;
+    width: 600px;
+    height: 680px;    
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    display: flex; /*El valor de la clase que cambia*/
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.c-login.inactive{
+    display: none;
+}
+
+.c-login-header{
+    display: flex;
+    flex-direction: row;
+    height: 8%;
+    width: 80%;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    border: 0.1em solid #07121C;
+    border-radius: 1em;
+}
+
+.tabs{
+    display: flex;
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    border-radius: 1em;
+    margin: 0%;
+    justify-content: space-evenly;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+#tab-login{
+    background: linear-gradient(rgb(4, 245, 197), rgb(3, 197, 241));
+    cursor: auto;
+    color: #07121C;
+    font-weight: 500;
+}
+
+#tab-signup{
+    background: transparent;
+    cursor: pointer;
+    color: white;
+}
+
+#tab-signup.moved{
+    background: linear-gradient(rgb(4, 245, 197), rgb(3, 197, 241));
+    cursor: auto;
+    color: #07121C;
+    font-weight: 500;
+}
+
+#tab-login.moved{
+    background: transparent;
+    cursor: pointer;
+    color: white;
+}
+
+#tab-signup:hover, #tab-login:hover{
+    background-color: rgba(7, 18, 28, 0.2);
+}
+
+.c-login-logo{
+    display: flex;
+    height: 40%;
+    justify-content: center;
+    align-content: center;
+    margin: 1.2em 0;
+}
+
+.c-login-form{
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% 40% 30%;
+    width: 100%;
+    justify-items: center;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+
+.c-input-user, .c-input-pass{
+    position: relative;
+    width: 90%;
+    height: 3.4em;
+    margin-bottom: 0.5em;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 100%;
+    justify-self: end;
+}
+
+.c-input-user input, .c-input-pass input{
+    border-radius: 0.5em;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    padding-left: 0.8em;
+    letter-spacing: 0.05em;
+    grid-column: 1;
+}
+
+.c-input-user label, .c-input-pass label{
+    position: absolute;
+    top: 50%;
+    left: 0.8em;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1.25em;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+.c-input-user div, .c-input-pass div{
+    grid-column: 2;
+}
+
+
+.icon-user label{
+    color:rgb(255, 255, 255, 0.8);
+}
+
+.icon-help:hover label{
+    color: #22EAD5;
+}
+
+
+.c-input-user input:hover, .c-input-pass input:hover{
+    border: 2px solid #22EAD5;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.c-input-user input:focus, .c-input-pass input:focus{
+    border: 2px solid #22EAD5;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+
+.c-input-user input:focus ~ label, .c-input-pass input:focus ~ label,
+.c-input-user input:valid ~ label, .c-input-pass input:valid ~ label{
+    top:0;
+    left:14px;
+    font-size: 1em;
+    padding: 0 2px;
+    background: rgba(27, 39, 59);
+}
+
+.c-login-btn{
+    width: 80%;
+}
+
+.btn{
+    text-decoration: none;
+    color: #000;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border-color: transparent;
+    font-size: 1.2em;
+    word-spacing: 0.1em;
+    letter-spacing: 0.1em;
+    background: linear-gradient(rgb(4, 245, 197), rgb(3, 197, 241));
+    box-shadow: 0.01em 0.01em 0.3em rgba(3, 191, 194, 0.828);
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: linear-gradient(rgb(2, 213, 171), rgb(0, 150, 184));
+}
+
+.c-login-help{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-rows: 50% 50%;
+    margin: 1.5em;
+}
+
+.c-login-help a{
+    color: #fff;
+    grid-row: 1;
+    margin: 0.6em 0;
+    text-align: center;
+}
+
+.c-login-help p.active{
+    visibility: visible;
+}
+
+.c-login-help p{
+    visibility: hidden;
+}
+
+.c-login-help p{
+    color: #fff;
+    grid-row: 2;
+    margin: 0.2em 0;
+    width: 100%;
+    padding: 0.2em 0.8em;
+    background: linear-gradient(rgb(99, 81, 234), rgb(88, 43, 166));
+    box-shadow: 1.2px 1.2px 5px 0px rgba(115, 238, 240, 0.8);
+    border-radius: 0.5em;
+    
+}
+
+.c-login-help a:hover{
+    color: #22EAD5;
+}
+
+.c-login-help a:visited{
+    color: #06D1E0;
+}
+
+
+
+/**************************************
+
+    POPUP AYUDA RECORDAR USUARIO
+
+***************************************/
+
+.c-modal-user-help{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.c-modal-user-help.active{
+    visibility: visible;
+}
+
+.pop-user-help{
+    width: 45%;
+    max-width: 600px;
+    height: 260px;
+    max-height: 260px;
+    padding: 1.5em;
+    background-color: rgb(200, 240, 255);
+    box-shadow: 1.2px 1.2px 5px 0px rgba(0, 255, 255, 2);
+    border-radius: 1em;
+    text-align: justify;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 75%;
+    transition: 0.5s ease all;
+    transform: scale(0.2);
+    opacity: 0;
+}
+
+.pop-user-help .header-user-help{
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pop-user-help .header-user-help img{
+    height: 48px;
+    opacity: 0;
+}
+
+.pop-user-help .header-user-help .btn-close-pop-user-help{
+    color: #14b5a4;
+    font-size: 16px;
+    line-height: 16px;
+    transition: 0.3ms ease all;
+}
+
+.pop-user-help .header-user-help .btn-close-pop-user-help:hover{
+    color: #088f76;
+}
+
+.pop-user-help .header-user-help .btn-close-pop-user-help:active{
+    color: #07121C;
+}
+
+.header-user-help h2{
+    top: 0;
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.5em;
+    opacity: 0;
+}
+
+.info-user-help .cont-user-help{
+    grid-column: 1;
+    grid-row: 2;
+    border-top: 1px solid #b4b7b9;
+    border-bottom: 1px solid #b4b7b9;
+    text-align: justify;
+    font-size: 1em;
+    opacity: 0;
+}
+
+
+.info-user-help .c-btn-user-help{
+    text-align: center;
+    margin-top: 15px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+}
+
+.c-btn-user-help .btn-ok{
+    background: linear-gradient(rgba(34, 234, 213, 0.8), rgba(16, 154, 140, 0.8));
+    padding: 6px;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-weight: 500;
+    width: 50%;
+    transition: 0.3s ease all;
+}
+
+.c-btn-user-help .btn-ok:hover{
+    background: linear-gradient(rgba(16, 154, 140, 0.8), rgba(34, 234, 213, 0.8));
+}
+.c-btn-user-help .btn-ok:active{
+    background: linear-gradient(rgba(7, 18, 28, 0.8), rgba(34, 234, 213, 0.8));
+}
+
+.c-btn-user-help .btn-cancel{
+    background: linear-gradient(rgba(255, 100, 200, 0.8), rgba(255, 74, 98, 0.8));
+    padding: 6px;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-weight: 500;
+    width: 50%;
+}
+
+.c-btn-user-help .btn-cancel:hover{
+    background: linear-gradient(rgba(255, 74, 98, 0.8), rgba(255, 100, 200, 0.8));
+}
+.c-btn-user-help .btn-cancel:active{
+    background: linear-gradient(rgba(7, 18, 28, 0.8), rgba(255, 74, 98, 0.8));
+}
+
+
+
+/********************************************
+
+    ANIMACION POPUP AYUDA RECORDAR USUARIO
+
+********************************************/
+
+.pop-user-help.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pop-user-help.active .header-user-help img{
+    animation: inImgHelpUser 0.2s linear 0.2s forwards;
+}
+
+@keyframes inImgHelpUser {
+    0%{
+        transform: rotate(270deg);
+        opacity: 0;
+    }    
+    100%{
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+
+.pop-user-help.active .header-user-help h2{
+    animation: inTitleHelpUser 0.3s ease 0.4s forwards;
+}
+
+@keyframes inTitleHelpUser {
+    from{
+        transform: translateY(-0.9em);
+        opacity: 0;
+    }    
+    to{
+        
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+.pop-user-help.active .info-user-help .cont-user-help{
+    animation: inContHelpUser 0.3s ease 0.4s forwards;
+}
+
+@keyframes inContHelpUser {
+    from{
+        transform: translateY(0.9em);
+        opacity: 0;
+    }    
+    to{
+        
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pop-user-help.active .info-user-help .c-btn-user-help{
+    animation: inBtnsHelpUser 1s ease 0.5s forwards;
+}
+
+@keyframes inBtnsHelpUser {
+    from{
+        opacity: 0;
+    }    
+    to{
+        opacity: 1;
+    }
+}
+
+
+/**************************************
+
+    POPUP AYUDA RECUPERAR CLAVE
+
+***************************************/
+
+.c-modal-pass-help{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.c-modal-pass-help.active{
+    visibility: visible;
+}
+
+.pop-pass-help{
+    width: 45%;
+    max-width: 600px;
+    height: 260px;
+    max-height: 260px;
+    padding: 1.5em;
+    background-color: rgb(200, 240, 255);
+    box-shadow: 1.2px 1.2px 5px 0px rgba(0, 255, 255, 2);
+    border-radius: 1em;
+    text-align: justify;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 75%;
+    transition: 0.5s ease all;
+    transform: scale(0.2);
+    opacity: 0;
+}
+
+.pop-pass-help .header-pass-help{
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pop-pass-help .header-pass-help img{
+    height: 48px;
+    opacity: 0;
+}
+
+.pop-pass-help .header-pass-help .btn-close-pop-pass-help{
+    color: #14b5a4;
+    font-size: 16px;
+    line-height: 16px;
+    transition: 0.3ms ease all;
+}
+
+.pop-pass-help .header-pass-help .btn-close-pop-pass-help:hover{
+    color: #088f76;
+}
+
+.pop-pass-help .header-pass-help .btn-close-pop-pass-help:active{
+    color: #07121C;
+}
+
+.header-pass-help{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.header-pass-help h2{
+    top: 0;
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.5em;
+    opacity: 0;
+}
+
+.info-pass-help .cont-pass-help{
+    grid-column: 1;
+    grid-row: 2;
+    border-top: 1px solid #b4b7b9;
+    border-bottom: 1px solid #b4b7b9;
+    text-align: justify;
+    font-size: 1em;
+    opacity: 0;
+}
+
+
+.info-pass-help .c-btn-pass-help{
+    text-align: center;
+    margin-top: 15px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+}
+
+.c-btn-pass-help .btn-ok{
+    background: linear-gradient(rgba(34, 234, 213, 0.8), rgba(16, 154, 140, 0.8));
+    padding: 6px;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-weight: 500;
+    width: 65%;
+    transition: 0.3s ease all;
+}
+
+.c-btn-pass-help .btn-ok:hover{
+    background: linear-gradient(rgba(16, 154, 140, 0.8), rgba(34, 234, 213, 0.8));
+}
+.c-btn-pass-help .btn-ok:active{
+    background: linear-gradient(rgba(7, 18, 28, 0.8), rgba(34, 234, 213, 0.8));
+}
+
+.c-btn-pass-help .btn-cancel{
+    background: linear-gradient(rgba(255, 100, 200, 0.8), rgba(255, 74, 98, 0.8));
+    padding: 6px;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-weight: 500;
+    width: 35%;
+}
+
+.c-btn-pass-help .btn-cancel:hover{
+    background: linear-gradient(rgba(255, 74, 98, 0.8), rgba(255, 100, 200, 0.8));
+}
+.c-btn-pass-help .btn-cancel:active{
+    background: linear-gradient(rgba(7, 18, 28, 0.8), rgba(255, 74, 98, 0.8));
+}
+
+
+
+/********************************************
+
+    ANIMACION POPUP AYUDA RECORDAR USUARIO
+
+********************************************/
+
+.pop-pass-help.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pop-pass-help.active .header-pass-help img{
+    animation: inImgHelpUser 0.2s linear 0.2s forwards;
+}
+
+@keyframes inImgHelpUser {
+    0%{
+        transform: rotate(270deg);
+        opacity: 0;
+    }    
+    100%{
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+
+.pop-pass-help.active .header-pass-help h2{
+    animation: inTitleHelpUser 0.3s ease 0.4s forwards;
+}
+
+@keyframes inTitleHelpUser {
+    from{
+        transform: translateY(-0.9em);
+        opacity: 0;
+    }    
+    to{
+        
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+.pop-pass-help.active .info-pass-help .cont-pass-help{
+    animation: inContHelpUser 0.3s ease 0.4s forwards;
+}
+
+@keyframes inContHelpUser {
+    from{
+        transform: translateY(0.9em);
+        opacity: 0;
+    }    
+    to{
+        
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pop-pass-help.active .info-pass-help .c-btn-pass-help{
+    animation: inBtnsHelpUser 1s ease 0.5s forwards;
+}
+
+@keyframes inBtnsHelpUser {
+    from{
+        opacity: 0;
+    }    
+    to{
+        opacity: 1;
+    }
+}
+
+/*****************************
+
+    Formulario de regsitro
+
+******************************/
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.c-signup{
+    width: 85%;
+    display: none; /*El valor de la clase que cambia*/
+    grid-template-columns: 100%;
+    grid-template-rows: 7% 93%;
+}
+
+.c-signup.inactive{
+    display: grid;
+}
+
+.form-reg-header{
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.form-reg-header h5{
+    color: #fff;
+    font-weight: 400;
+}
+
+.signup-form{
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.c-input-signup.div-id{
+    display: grid;
+    grid-template-columns: 40% 55% 5%;
+    grid-template-rows: 100%;
+}
+
+.c-input-signup.div-id .type-id{
+    grid-column: 1;
+    font-size: 1em;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0.5em;
+}
+
+.c-input-signup.div-id .type-id:hover{
+    border: 2px solid #22EAD5;
+    cursor: pointer;
+}
+
+.c-input-signup.div-id .type-id{
+    margin-right: 2%;
+    padding-left: 0.3em;
+}
+
+.c-input-signup.div-id option{
+    background-color: rgba(27, 39, 59, 0.9);
+}
+
+.c-input-signup.div-id label{
+    position: absolute;
+    top: 50%;
+    left: 42.3%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.3s ease all;
+    background-color: transparent;
+}
+
+
+.c-input-signup.div-id .in-id{
+    grid-column: 2;
+}
+
+.c-input-signup.div-id .icon-help{
+    grid-column: 3;
+}
+
+.c-input-signup.div-id input:focus ~ label,
+.c-input-signup.div-id input:valid ~ label{
+    top: 0;
+    left: 42%;
+    font-size: 0.8em;
+    padding: 0 2px;
+    background: #2F3442;
+}
+
+.c-input-signup{
+    position: relative;
+    width: 100%;
+    height: 2.5em;
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: 95% 5%;
+    grid-template-rows: 100%;
+}
+
+.c-input-signup input{
+    border-radius: 0.5em;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    padding-left: 0.2em;
+    letter-spacing: 0.05em;
+    grid-column: 1;
+    grid-row: 1;
+    padding-left: 0.8em;
+}
+
+.c-input-signup .icon-help{
+    grid-column: 2;
+}
+
+
+.c-input-signup label{
+    position: absolute;
+    top: 50%;
+    left: 0.8em;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.3s ease all;
+    background-color: transparent;
+}
+
+.c-input-signup .question{
+    grid-column: 1;
+    font-size: 1em;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0.5em;
+    padding-left: 0.3em;
+}
+
+.c-input-signup option{
+    background-color: rgba(1, 1, 8, 0.9);
+    padding-left: 0.3em;
+}
+
+.c-input-signup option label{
+    left: 1em;
+}
+
+
+.icon-help{
+    position: relative;
+    cursor: pointer;
+}
+
+.icon-help label{
+    color:rgb(255, 255, 255, 0.8);
+}
+
+.icon-help:hover label{
+    color: #22EAD5;
+}
+
+.c-input-signup input:focus ~ label,
+.c-input-signup input:valid ~ label{
+    top: 0;
+    left: 14px;
+    font-size: 0.8em;
+    padding: 0 2px;
+    background: #2F3442;
+}
+
+.c-input-signup input:hover{
+    border: 2px solid #22EAD5;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.c-input-signup input:focus{
+    border: 2px solid #22EAD5;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.c-signup-btns{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+}
+
+.c-signup-btns button{
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    width: 90%;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border-color: transparent;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+.c-signup-btns .btn-submit-signup{
+    background: linear-gradient(rgb(4, 245, 197), rgb(3, 197, 241));
+    box-shadow: 0.01em 0.01em 0.3em rgba(3, 191, 194, 0.828);
+}
+
+.c-signup-btns .btn-reset-signup{
+    background: linear-gradient(rgba(255, 100, 200, 0.8), rgba(255, 74, 98, 0.8));
+    box-shadow: 0.01em 0.01em 0.3em rgba(157, 4, 25, 0.8);
+}
+
+
+.c-signup-btns .btn-submit-signup:hover{
+    background: linear-gradient(rgb(2, 213, 171), rgb(0, 150, 184));
+}
+
+.c-signup-btns .btn-reset-signup:hover{
+    background: linear-gradient(rgba(253, 78, 174, 0.8), rgba(200, 27, 41, 0.8));
+}
+
+.c-signup-btns .btn-submit-signup:active{
+    background: linear-gradient(rgba(7, 18, 28, 0.8), rgba(34, 234, 213, 0.8));
+}
+
+.c-signup-btns .btn-reset-signup:active{
+    background: linear-gradient(rgba(7, 18, 28, 0.8), rgba(255, 74, 98, 0.8));
+}
+
+
+@media only screen and (max-width: 575px) {
+    .example {background: red;}
+}
+/* Small devices (600px and up) */
+@media only screen and (min-width: 576px) {
+    .example {background: green;}
+}
+/* Medium devices (768px and up) */
+@media only screen and (min-width: 768px) {
+    .example {background: blue;}
+}
+
+/* Large devices (992px and up) */
+@media only screen and (min-width: 992px) {
+    .example {background: orange;}
+}
+/* Extra large devices (1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .example {background: pink;}
+}
+
+/* Súper Extra large devices (1200px and up) */
+@media only screen and (min-width: 1400px) {
+    .example {background: pink;}
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="css/recuperar.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="c-modal-rem-user active" id="c-modal-rem-user">
+        <div class="pop-rem-user active" id="pop-rem-user">
+            <div class="header-rem-user">
+                <img src="img/recordar-usuario.png" alt="Icono del popup recordar el usuario">
+                <h3 class="title-rem-user">Recupera tu usuario</h3>
+                <a aria-hidden="true" href="#" id="btn-close-pop-rem-user" class="btn-close-pop-rem-user"> <i class="fas fa-times"></i></a>
+            </div>
+            <div class="info-rem-user">
+                <div class="c-input-remember div-id-rem" id="div-id-rem">
+                    <select class="type-id-rem" id="type-id-rem">
+                        <option disabled selected>Tipo ID...</option>
+                        <option value="1">DNI</option>
+                        <option value="2">Pasaporte</option>
+                        <option value="3">Cedula de Ciudadanía</option>
+                        <option value="4">Cedula de Extranjería</option>
+                    </select>
+                    <input class="in-id-rem" id="in-id-rem" type="number" required >
+                    <label class="in-id-rem-lbl" for="in-id-rem" id="in-id-rem-lbl">No. Identificación</label>
+                    <div class="icon-help" id="btn-rem-id">
+                        <label class="fa fa-question-rem-circle"></label>
+                    </div>
+                </div>
+                <div class="c-input-remember">
+                    <select class="question-rem" id="question-rem">
+                        <option disabled selected>Selecciona una pregunta...</option>
+                        <option value="1">¿Cuál es tu libro favorito?</option>
+                        <option value="2">¿Cuál es el nombre de tu mascota?</option>
+                        <option value="3">¿Cuál es tu película favorita?</option>
+                        <option value="4">¿Cuál es tu animal favorito?</option>
+                        <option value="5">¿Cuál es tu comida favorita?</option>
+                        <option value="6">¿Cuál fue tu primer trabajo?</option>
+                    </select>
+                    <div class="icon-help" id="btn-help-question-rem">
+                        <label class="fa fa-question-rem-circle"></label>
+                    </div>
+                </div>
+                <div class="c-input-remember">
+                    <input class="in-answer-rem" id="in-answer-rem" type="text" required >
+                    <label class="in-answer-rem-lbl" for="in-answer-rem" id="in-answer-rem-lbl">Respuesta a la pregunta secreta</label>
+                    <div class="icon-help" id="btn-rem-answer">
+                        <label class="fa fa-question-rem-circle"></label>
+                    </div>
+                </div>
+                <div class="c-btn-rem-user">
+                    <label class="btn-ok" id="btn-ok-pop-rem-user">Recuperar</label>
+                    <label class="btn-cancel" id="btn-cancel-pop-rem-user">Cancelar</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

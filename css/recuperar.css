@@ -1,0 +1,673 @@
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Poppins:wght@400;500&family=Roboto+Neon&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Roboto', 'Dangrek', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+/**************************************
+
+    POPUP AYUDA RECORDAR USUARIO
+
+***************************************/
+
+.c-modal-rem-user{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.c-modal-rem-user.active{
+    visibility: visible;
+}
+
+.pop-rem-user{
+    width: 100%;
+    max-width: 700px;
+    height: 430px;
+    max-height: 500px;
+    padding: 1.5em;
+    background-color: rgb(200, 240, 255);
+    box-shadow: 1.2px 1.2px 5px 0px rgba(0, 255, 255, 2);
+    border-radius: 1em;
+    text-align: justify;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 5em 1fr;
+    opacity: 0;
+    transition: 0.5s ease all;
+    transform: scale(0.2);
+}
+
+.pop-rem-user .header-rem-user{
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.8em;
+    border-bottom: 2px solid rgba(31, 127, 100, 0.4);
+    padding-bottom: 1em;
+}
+
+.pop-rem-user .header-rem-user img{
+    height: 48px;
+    opacity: 0;
+}
+
+.pop-rem-user .header-rem-user .btn-close-pop-rem-user{
+    color: #14b5a4;
+    font-size: 1.2em;
+    transition: 0.3ms ease all;
+}
+
+.pop-rem-user .header-rem-user .btn-close-pop-rem-user:hover{
+    color: #088f76;
+}
+
+.pop-rem-user .header-rem-user .btn-close-pop-rem-user:active{
+    color: #07121C;
+}
+
+.header-rem-user h3{
+    top: 0;
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.5em;
+    opacity: 0;
+}
+
+.info-rem-user .c-btn-rem-user{
+    text-align: center;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    font-size: 1em;
+    width: 100%;
+}
+
+.c-btn-rem-user .btn-ok{
+    background: linear-gradient(rgba(34, 234, 213, 0.8), rgba(16, 154, 140, 0.8));
+    padding: 6px;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-weight: 500;
+    width: 48%;
+    transition: 0.3s ease all;
+}
+
+.c-btn-rem-user .btn-ok:hover{
+    background: linear-gradient(rgba(16, 154, 140, 0.8), rgba(34, 234, 213, 0.8));
+}
+.c-btn-rem-user .btn-ok:active{
+    background: linear-gradient(rgba(7, 18, 28, 0.8), rgba(34, 234, 213, 0.8));
+}
+
+.c-btn-rem-user .btn-cancel{
+    background: linear-gradient(rgba(255, 100, 200, 0.8), rgba(255, 74, 98, 0.8));
+    padding: 6px;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-weight: 500;
+    width: 48%;
+}
+
+.c-btn-rem-user .btn-cancel:hover{
+    background: linear-gradient(rgba(255, 74, 98, 0.8), rgba(255, 100, 200, 0.8));
+}
+.c-btn-rem-user .btn-cancel:active{
+    background: linear-gradient(rgba(7, 18, 28, 0.8), rgba(255, 74, 98, 0.8));
+}
+
+
+
+
+/********************************************
+
+    ANIMACION POPUP AYUDA RECORDAR USUARIO
+
+********************************************/
+
+.pop-rem-user.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pop-rem-user.active .header-rem-user img{
+    animation: inImgHelpUser 0.2s linear 0.2s forwards;
+}
+
+@keyframes inImgHelpUser {
+    0%{
+        transform: rotate(270deg);
+        opacity: 0;
+    }    
+    100%{
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+
+.pop-rem-user.active .header-rem-user h3{
+    animation: inTitleHelpUser 0.3s ease 0.4s forwards;
+}
+
+@keyframes inTitleHelpUser {
+    from{
+        transform: translateY(-0.9em);
+        opacity: 0;
+    }    
+    to{
+        
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+.pop-rem-user.active .info-rem-user .cont-user-help{
+    animation: inContHelpUser 0.3s ease 0.4s forwards;
+}
+
+@keyframes inContHelpUser {
+    from{
+        transform: translateY(0.9em);
+        opacity: 0;
+    }    
+    to{
+        
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pop-rem-user.active .info-rem-user .c-btn-rem-user{
+    animation: inBtnsHelpUser 1s ease 0.5s forwards;
+}
+
+@keyframes inBtnsHelpUser {
+    from{
+        opacity: 0;
+    }    
+    to{
+        opacity: 1;
+    }
+}
+
+
+/*****************************
+
+    Formulario de regsitro
+
+******************************/
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+.c-input-remember.div-id-rem{
+    display: grid;
+    grid-template-columns: 40% 55% 5%;
+    grid-template-rows: 100%;
+}
+
+.c-input-remember.div-id-rem .type-id-rem{
+    grid-column: 1;
+    font-size: 1em;
+    border: 2px solid #3bb4b8;
+    background: transparent;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0.5em;
+    padding-left: 0.8em;
+}
+
+.c-input-remember.div-id-rem .type-id-rem:hover{
+    border: 2px solid #41898b;
+    cursor: pointer;
+}
+
+.c-input-remember.div-id-rem .type-id-rem{
+    margin-right: 2%;
+}
+
+.c-input-remember.div-id-rem option{
+    background-color: rgba(53, 168, 194, 0.9);
+}
+
+.c-input-remember.div-id-rem label{
+    position: absolute;
+    top: 50%;
+    left: 0.8em;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 1em;
+    transition: 0.3s ease all;
+    background-color: transparent;
+}
+
+.c-input-remember.div-id-rem .in-id-rem-lbl{
+    left: 14.8em;
+}
+
+.c-input-remember .question-rem{
+    padding-left: 0.8em;
+}
+
+.c-input-remember.div-id-rem .in-id-rem{
+    grid-column: 2;
+    padding-left: 0.8em;
+}
+
+.c-input-remember.div-id-rem .icon-help{
+    grid-column: 3;
+}
+
+.c-input-remember.div-id-rem .icon-help label, .c-input-remember .icon-help label{
+    color: rgb(27, 96, 50);
+}
+
+.c-input-remember.div-id-rem .icon-help:hover label, .c-input-remember .icon-help:hover label{
+    color: rgb(243, 36, 212);
+}
+
+.c-input-remember.div-id-rem input:focus ~ label,
+.c-input-remember.div-id-rem input:valid ~ label{
+    top: 0;
+    left: 43.3%;
+    font-size: 0.8em;
+    padding: 0 2px;
+    background: rgb(200, 240, 255);
+}
+
+
+.c-input-remember{
+    position: relative;
+    width: 100%;
+    height: 2.5em;
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: 95% 5%;
+    grid-template-rows: 100%;
+}
+
+.c-input-remember input{
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 0.5em;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    border: 2px solid #3bb4b8;
+    background: transparent;
+    color: #000;
+    outline: none;
+    letter-spacing: 0.05em;
+}
+
+.c-input-remember.div-id-rem .icon-help{
+    padding-left: 1.8em;
+}
+
+
+.c-input-remember .icon-help{
+    position: relative;
+}
+
+.c-input-remember .icon-help{
+    grid-column: 2;
+}
+
+.c-input-remember label{
+    position: absolute;
+    top: 50%;
+    left: 0.8em;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 1em;
+    transition: 0.3s ease all;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.c-input-remember .question-rem{
+    grid-column: 1;
+    font-size: 1em;
+    border: 2px solid #3bb4b8;
+    background: transparent;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.c-input-remember option{
+    background-color:  #3bb4b8;
+}
+
+.c-input-remember input:focus ~ label,
+.c-input-remember input:valid ~ label{
+    top: 0;
+    left: 14px;
+    font-size: 0.8em;
+    padding: 0 2px;
+    background: rgb(200, 240, 255);
+}
+
+.c-input-remember input:hover{
+    border: 2px solid #22EAD5;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.c-input-remember input:focus{
+    border: 2px solid #22EAD5;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.c-input-remember .in-answer-rem{
+    padding-left: 0.8em;
+}
+
+
+/********************************************************************************/
+/********************************************************************************/
+/*                                 MEDIA QUERIES                                */
+/********************************************************************************/
+/********************************************************************************/
+
+@media only screen and (width < 575px) {
+    .pop-rem-user{
+        width: 100%;
+        width: 575px;
+        max-width: 400px;
+        box-shadow: none;
+        border-radius: 0;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+    }
+
+    .pop-rem-user .header-rem-user{
+        padding-bottom: 0.8em;
+        border-bottom: 2px solid rgba(31, 127, 100, 0.4);
+    }
+
+    .pop-rem-user .header-rem-user img{
+        height: 36px;
+    }
+    
+    .header-rem-user h3{
+        font-size: 1em;
+    }
+
+    .info-rem-user .c-btn-rem-user{
+        font-size: 0.9em;
+    }
+    
+    .info-rem-user .c-btn-rem-user .btn-ok{
+        background: rgb(129, 225, 180);
+        padding: 6px;
+        border-radius: 0;
+        border: 2px solid rgb(8, 68, 33);
+        color: rgb(8, 68, 33);
+    }
+
+    .c-btn-rem-user .btn-ok:hover{
+        background-color: rgba(16, 154, 140, 0.8);
+    }
+    .c-btn-rem-user .btn-ok:active{
+        background-color: rgba(11, 75, 33, 0.8);
+        color: rgb(108, 211, 108);
+    }
+
+    .c-btn-rem-user .btn-cancel{
+        background: rgba(255, 100, 200, 0.8);
+        padding: 6px;
+        border-radius: 0;
+        border: 2px solid rgba(81, 7, 55, 0.8);
+        color: rgba(81, 7, 55, 0.8);
+    }
+    
+    .c-btn-rem-user .btn-cancel:hover{
+        background: rgba(255, 74, 98, 0.8);
+    }
+    .c-btn-rem-user .btn-cancel:active{
+        background: rgba(62, 14, 56, 0.8);
+        color: rgb(250, 122, 231)
+    }
+    
+    /*Formulario*/
+    .c-input-remember.div-id-rem{
+        display: grid;
+        height: 7.5em;
+        grid-template-columns: 95% 5%;
+        grid-template-rows: 4em 4em; 
+        font-size: 0.8em;
+        border-radius: 0;
+        margin-bottom: 1em;
+    }
+
+    .c-input-remember.div-id-rem .icon-help{
+        font-size: 1.25em;
+    }
+
+    .c-input-remember.div-id-rem .type-id-rem{
+        width: 100%;
+        height: 3.3em;
+        border-radius: 0;
+        grid-column: 1;
+        grid-row: 1;
+        padding: 0.8em;
+    }
+
+    .c-input-remember.div-id-rem .in-id-rem{
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        height: 3.2em;
+        font-size: 1em;
+        border-radius: 0;
+        padding: 0.8em;
+    }
+
+    .c-input-remember.div-id-rem label{
+        top: 75%;
+        margin-left: 0.2em;
+    }
+
+    .c-input-remember.div-id-rem .in-id-rem-lbl{
+        left: 1em;
+    }
+    
+    .c-input-remember.div-id-rem input:focus ~ label,
+    .c-input-remember.div-id-rem input:valid ~ label{
+        top: 4.5em;
+        left: 14px;
+        font-size: 0.9em;
+        padding: 0 2px;
+        background: rgb(200, 240, 255);
+    }
+
+    .c-input-remember.div-id-rem .icon-help{
+        grid-column: 2;
+        grid-row: 1;
+        border-color:#000;
+    }
+
+    .c-input-remember .question-rem{
+        font-size: 0.8em;
+        border-radius: 0;
+        padding: 0.8em;
+        height: 3.3em;
+    }
+
+    .c-input-remember .in-answer-rem{
+        font-size: 0.8em;
+        border-radius: 0;
+        padding: 0.8em;
+        height: 3.3em;
+    }
+
+    .c-input-remember .in-answer-rem ~ label{
+        font-size: 0.8em;
+        padding: 0.8em;
+    }
+}
+/* Small devices (600px and up) */
+@media only screen and (width >= 575px) {
+    
+    .pop-rem-user{
+        height: 370px;
+    }
+
+    .pop-rem-user .header-rem-user img{
+        height: 48px;
+        opacity: 0;
+
+    }
+
+     /*Formulario*/
+    .c-input-remember.div-id-rem{
+        font-size: 0.8em;        
+    }
+    /*Formulario*/
+
+    .c-input-remember.div-id-rem{
+        margin-top: 1.5em;
+    }
+
+    .c-input-remember.div-id-rem .icon-help{
+        font-size: 1.25em;
+    }
+
+    .c-input-remember.div-id-rem .in-id-rem{
+        position: relative;
+        padding: 0.8em;
+    }
+
+    .c-input-remember.div-id-rem .in-id-rem-lbl{
+        left: 42%;
+    }
+
+    .c-input-remember.div-id-rem input:focus ~ label,
+    .c-input-remember.div-id-rem input:valid ~ label{
+        top: 0;
+        left: 42%;
+        font-size: 0.8em;
+        padding: 0 2px;
+        background: rgb(200, 240, 255);
+    }
+
+    .c-input-remember .question-rem{
+        font-size: 0.8em;
+    }
+
+    .c-input-remember .in-answer-rem{
+        font-size: 0.8em;
+
+    }
+
+    .c-input-remember .in-answer-rem ~ label{
+        font-size: 0.8em;
+        padding: 0.3em;
+    }
+    
+    .c-input-remember input:focus ~ label,
+    .c-input-remember input:valid ~ label{
+        top: 0;
+        left: 14px;
+        font-size: 0.7em;
+        padding: 0 2px;
+        background: rgb(200, 240, 255);
+    }
+
+}
+/* Medium devices (768px and up) */
+@media only screen and (min-width: 768px) {
+    
+    .pop-rem-user{
+        width: 650px;
+        height: 430px;
+    }
+
+    .pop-rem-user .header-rem-user{
+        margin-bottom: 2em;
+        height: 5em;
+        border-bottom: 2px solid rgba(31, 127, 100, 0.4);
+    }
+
+    .pop-rem-user .header-rem-user img{
+        height: 76px;
+        opacity: 0;
+    }
+
+    .header-rem-user h3{
+        font-size: 1.8em;
+    }
+
+    .info-rem-user .c-btn-rem-user{
+        height: 4em;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2em;
+        margin-top: 1.8em;
+    }
+    
+    .c-btn-rem-user .btn-ok{
+        padding: 13px;
+    }
+
+    .c-btn-rem-user .btn-cancel{
+        padding: 13px;
+    }
+
+    .c-input-remember.div-id-rem{
+        height: 3em;
+    }
+
+    .c-input-remember.div-id-rem .type-id-rem, .c-input-remember.div-id-rem .in-id-rem, .c-input-remember.div-id-rem .in-id-rem-lbl{
+        font-size: 1.2em;
+    }
+
+    .c-input-remember .question-rem, .c-input-remember label.in-answer-rem-lbl, .c-input-remember .in-answer-rem{
+        font-size: 1em;
+    }
+
+    .c-input-remember label, .c-input-remember.div-id-rem label{
+        font-size: 1.2em;
+    }
+
+}
+
+/* Large devices (992px and up) */
+@media only screen and (min-width: 992px) {
+    .dummy {background: orange;}
+}
+/* Extra large devices (1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .dummy {background: pink;}
+}
+
+/* Súper Extra large devices (1400px and up) */
+@media only screen and (min-width: 1400px) {
+    .dummy {background: pink;}
+}

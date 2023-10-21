@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&family=Poppins:wght@400;500&family=Roboto&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="css/index-aurora.css">
+    <link rel="stylesheet" href="css/recuperar.css">
+    <title>Sistema Aurora</title>
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="vid/aurora-borealis-over-the-sea-moewalls-com.mp4" type="video/mp4">
+      </video>
+    <div class="c-global">
+        <div class="c-login-header">
+            <div class="tabs" id="tab-login">Ingresar</div>
+            <div class="tabs" id="tab-signup">Registrarse</div>
+        </div>
+        <div class="c-login" id="c-login">
+            <div class="c-login-logo">
+                <img src="/img/logo-aurora.png" alt="">
+            </div>
+            <form action="#" class="login-form" novalidate>
+                <div class="c-login-form">
+                    <div class="c-input-user">
+                        <input class="in-user" id="in-user" type="text" required>
+                        <label for="in-user" id="in-user-lbl">Ingresa el ususario</label>
+                        <div class="icon-help" id="btn-user-help">
+                            <label class="fas fa-info-circle"></label>
+                        </div>
+                    </div>
+                    <div class="c-input-pass">
+                        <input id="in-pass" type="password" required>
+                        <label for="in-pass" id="in-pass-lbl">Ingresa la contraseña</label>
+                        <div class="icon-help" id="btn-pass-help">
+                            <label class="fas fa-info-circle"></label>
+                        </div>
+                    </div>
+                    <div class="c-login-btn">
+                        <button class="btn" id="btn-init-session" type="submit" onclick="initSession();">Iniciar Sesión</button>
+                    </div>
+                </div>
+            </form>
+            <div class="c-login-help" id="c-login-help">
+                <a href="#">¿Necesitas Ayuda?</a>
+                <p id="help-tip">Debes incresar el usuario y la contraseña</p>
+            </div>
+        </div>
+        <div class="c-signup" id="c-signup">
+            <div class="form-reg-header">
+                <h5>A continuación, por favor diligencia los siguientes datos:</h5>
+            </div>
+            <form action="#" class="signup-form">
+                <div class="c-signup-form">
+                    <div class="c-input-signup div-id" id="div-id">
+                        <select class="type-id" id="type-id">
+                            <option disabled selected>Tipo ID...</option>
+                            <option value="1">DNI</option>
+                            <option value="2">Pasaporte</option>
+                            <option value="3">Cedula de Ciudadanía</option>
+                            <option value="4">Cedula de Extranjería</option>
+                        </select>
+                        <input class="in-id" id="in-id" type="number" required >
+                        <label for="in-id" id="in-id-lbl">No. Identificación</label>
+                        <div class="icon-help" id="btn-help-id">
+                            <label class="fa fa-question-circle"></label>
+                        </div>
+                    </div>
+                    <div class="c-input-signup">
+                        <input class="in-name" id="in-name" type="text" required>
+                        <label for="in-name" id="in-name-lbl">Nombre/s</label>
+                        <div class="icon-help" id="btn-help-name">
+                            <label class="fa fa-question-circle"></label>
+                        </div>
+                    </div>
+                    <div class="c-input-signup">
+                        <input id="in-last" type="text" required>
+                        <label for="in-last" id="in-last-lbl">Apellido/s</label>
+                        <div class="icon-help" id="btn-help-last">
+                            <label class="fa fa-question-circle"></label>
+                        </div>
+                    </div>
+                    <div class="c-input-signup">
+                        <input id="in-mail" type="text" required>
+                        <label for="in-mail" id="in-mail-lbl">Correo electrónico</label>
+                        <div class="icon-help" id="btn-help-mail">
+                            <label class="fa fa-question-circle"></label>
+                        </div>
+                    </div>
+                    <div class="c-input-signup">
+                        <input id="in-pass1" type="password" required>
+                        <label for="in-pass1" id="in-pass1-lbl">Contraseña</label>
+                        <div class="icon-help" id="btn-help-pass1">
+                            <label class="fa fa-question-circle"></label>
+                        </div>
+                    </div>
+                    <div class="c-input-signup">
+                        <input id="in-pass2" type="password" required>
+                        <label for="in-pass2" id="in-pass2-lbl">Repite la contraseña</label>
+                        <div class="icon-help" id="btn-help-pass2">
+                            <label class="fa fa-question-circle"></label>
+                        </div>
+                    </div>
+                    <div class="c-input-signup">
+                        <select class="question" id="question">
+                            <option disabled selected>Selecciona una pregunta...</option>
+                            <option value="1">¿Cuál es tu libro favorito?</option>
+                            <option value="2">¿Cuál es el nombre de tu mascota?</option>
+                            <option value="3">¿Cuál es tu película favorita?</option>
+                            <option value="4">¿Cuál es tu animal favorito?</option>
+                            <option value="5">¿Cuál es tu comida favorita?</option>
+                            <option value="6">¿Cuál fue tu primer trabajo?</option>
+                        </select>
+                        <div class="icon-help" id="btn-help-question">
+                            <label class="fa fa-question-circle"></label>
+                        </div>
+                    </div>
+                    <div class="c-input-signup">
+                        <input id="in-answer" type="text" required >
+                        <label for="in-answer" id="in-answer-lbl">Respuesta a la pregunta secreta</label>
+                        <div class="icon-help" id="btn-help-answer">
+                            <label class="fa fa-question-circle"></label>
+                        </div>
+                    </div>
+                    <div class="c-input-signup">
+                        <input id="in-tel" type="tel" required >
+                        <label for="in-tel" id="in-tel-lbl">Ingresa tu número de celular</label>
+                        <div class="icon-help" id="btn-help-tel">
+                            <label class="fa fa-question-circle"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-signup-btns">
+                        <button class="btn-submit-signup" type="submit">Enviar</button>
+                        <button class="btn-reset-signup" type="reset">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="c-modal-user-help" id="c-modal-user-help">
+        <div class="pop-user-help" id="pop-user-help">
+            <div class="header-user-help">
+                <img src="img/recordar-usuario.png" alt="Icono del popup recordar el usuario">
+                <h2 class="title-user-help">¿Olvidó su usuario?</h2>
+                <a aria-hidden="true" href="#" id="btn-close-pop-user-help" class="btn-close-pop-user-help"> <i class="fas fa-times"></i></a>
+            </div>
+            <div class="info-user-help">
+                <p class="cont-user-help">No se preocupe. El nombre de usuario es normalmente la dirección de correo electrónico. Sin embargo, si no lo recuerda le ayudaremos a recuperarlo aquí.</p>
+                <div class="c-btn-user-help">
+                    <label class="btn-ok" id="btn-ok-pop-user-help">Recuperar el usuario</label>
+                    <label class="btn-cancel" id="btn-cancel-pop-user-help">Cancelar</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c-modal-pass-help" id="c-modal-pass-help">
+        <div class="pop-pass-help" id="pop-pass-help">
+            <div class="header-pass-help">
+                <img src="img/restablecer-clave.png" alt="Icono del popup restablecer la contraseña">
+                <h2 class="title-pass-helpr">¿Olvidó su contraseña?</h2>
+                <a aria-hidden="true" href="#" id="btn-close-pop-pass-help" class="btn-close-pop-pass-help"> <i class="fas fa-times"></i></a>
+            </div>
+            <div class="info-pass-help">
+                <p class="cont-pass-help">No hay problema. La contraseña debe ser algo que pueda recordar fácilmente, pero que otros no puedan descifrar. Si no la recuerda, le ayudaremos a asignar una nueva aquí.</p>
+                <div class="c-btn-pass-help">
+                    <label class="btn-ok" id="btn-ok-pop-pass-help">Restablecer contraseña</label>
+                    <label class="btn-cancel" id="btn-cancel-pop-pass-help">Cancelar</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-modal-rem-user" id="c-modal-rem-user">
+        <div class="pop-rem-user" id="pop-rem-user">
+            <div class="header-rem-user">
+                <img src="img/recordar-usuario.png" alt="Icono del popup recordar el usuario">
+                <h3 class="title-rem-user">Recupera tu usuario</h3>
+                <a aria-hidden="true" href="#" id="btn-close-pop-rem-user" class="btn-close-pop-rem-user"> <i class="fas fa-times"></i></a>
+            </div>
+            <div class="info-rem-user">
+                <div class="c-input-remember div-id-rem" id="div-id-rem">
+                    <select class="type-id-rem" id="type-id-rem">
+                        <option disabled selected>Tipo ID...</option>
+                        <option value="1">DNI</option>
+                        <option value="2">Pasaporte</option>
+                        <option value="3">Cedula de Ciudadanía</option>
+                        <option value="4">Cedula de Extranjería</option>
+                    </select>
+                    <input class="in-id-rem" id="in-id-rem" type="number" required >
+                    <label class="in-id-rem-lbl" for="in-id-rem" id="in-id-rem-lbl">No. Identificación</label>
+                    <div class="icon-help" id="btn-rem-id">
+                        <label class="fa fa-question-rem-circle"></label>
+                    </div>
+                </div>
+                <div class="c-input-remember">
+                    <select class="question-rem" id="question-rem">
+                        <option disabled selected>Selecciona una pregunta...</option>
+                        <option value="1">¿Cuál es tu libro favorito?</option>
+                        <option value="2">¿Cuál es el nombre de tu mascota?</option>
+                        <option value="3">¿Cuál es tu película favorita?</option>
+                        <option value="4">¿Cuál es tu animal favorito?</option>
+                        <option value="5">¿Cuál es tu comida favorita?</option>
+                        <option value="6">¿Cuál fue tu primer trabajo?</option>
+                    </select>
+                    <div class="icon-help" id="btn-help-question-rem">
+                        <label class="fa fa-question-rem-circle"></label>
+                    </div>
+                </div>
+                <div class="c-input-remember">
+                    <input class="in-answer-rem" id="in-answer-rem" type="text" required >
+                    <label class="in-answer-rem-lbl" for="in-answer-rem" id="in-answer-rem-lbl">Respuesta a la pregunta secreta</label>
+                    <div class="icon-help" id="btn-rem-answer">
+                        <label class="fa fa-question-rem-circle"></label>
+                    </div>
+                </div>
+                <div class="c-btn-rem-user">
+                    <label class="btn-ok" id="btn-ok-pop-rem-user">Recuperar</label>
+                    <label class="btn-cancel" id="btn-cancel-pop-rem-user">Cancelar</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/index-aurora.js"></script>
+</body>
+</html>

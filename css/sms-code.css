@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Poppins:wght@400;500&family=Roboto+Neon&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Roboto', 'Dangrek', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+}
+
+.c-global{
+    position: absolute;
+    background: linear-gradient(rgba(27, 39, 59, 0.9), rgba(6, 6, 30, 0.9));
+    width: 600px;
+    height: 400px;    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    border-radius: 1em;
+    box-shadow: 0.15em 0.4em 0.8em rgb(4, 1, 23);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.header{
+    margin-top: 2em;
+}
+
+.header p{
+    font-size: 1.5em;
+    color: #22EAD5;
+}
+
+.subtitle{
+    margin: 1em;
+}
+
+.subtitle p{
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.c-code{
+    margin: 1em 0 3em 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.in-code{
+    font-size: 2em;
+    height: 2em;
+    width: 2em; 
+    text-align: center;
+    margin: 0 0.2em;
+    color: #22EAD5;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.1em solid #22EAD5;
+}
+
+.in-code:focus {
+    outline: none;
+}
+
+.in-code:active {
+    outline: none;
+}   
+
+.c-foot{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.c-foot h4{
+    color:   #22EAD5;
+    font-weight: lighter;
+    margin-bottom: 1em;
+}
+
+.c-foot button{
+    background-color: #22EAD5;
+    border-radius: 0.5em;
+    height: 3em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
