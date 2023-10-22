@@ -14,20 +14,28 @@ body{
     background-size: cover;
 }
 
-.c-global{
+.c-cod-sms{
     position: absolute;
-    background: linear-gradient(rgba(27, 39, 59, 0.9), rgba(6, 6, 30, 0.9));
+    background: linear-gradient(rgba(27, 39, 59, 1), rgba(6, 6, 30, 1));
     width: 600px;
     height: 400px;    
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) ;
     border-radius: 1em;
+    border:1px solid #22EAD5;
     box-shadow: 0.15em 0.4em 0.8em rgb(4, 1, 23);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-content: center;
     align-items: center;
+    visibility: hidden;
+    z-index: 2                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+}
+
+.c-cod-sms.active{
+    display: flex;
+    visibility: visible;
 }
 
 .header{
@@ -56,7 +64,7 @@ body{
 }
 
 input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
+input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }

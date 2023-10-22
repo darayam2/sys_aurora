@@ -11,12 +11,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="css/index-aurora.css">
     <link rel="stylesheet" href="css/recuperar.css">
+    <link rel="stylesheet" href="css/sms-code.css">
     <title>Sistema Aurora</title>
 </head>
 <body>
-    <video id="background-video" autoplay loop muted>
+    <video  id="background-video" autoplay loop muted v-html="video">
+        <source v-bind:src="src" v-bind:type="type">
+    </video>
+    <!--<video id="background-video" autoplay loop muted>
         <source src="vid/aurora-borealis-over-the-sea-moewalls-com.mp4" type="video/mp4">
-      </video>
+    </video>-->
     <div class="c-global">
         <div class="c-login-header">
             <div class="tabs" id="tab-login">Ingresar</div>
@@ -80,7 +84,7 @@
                         </div>
                     </div>
                     <div class="c-input-signup">
-                        <input id="in-last" type="text" required>
+                        <input calss="in-last" id="in-last" type="text" required>
                         <label for="in-last" id="in-last-lbl">Apellido/s</label>
                         <div class="icon-help" id="btn-help-last">
                             <label class="fa fa-question-circle"></label>
@@ -137,9 +141,10 @@
                     </div>
                 </div>
                 <div class="c-signup-btns">
-                        <button class="btn-submit-signup" type="submit">Enviar</button>
-                        <button class="btn-reset-signup" type="reset">Cancelar</button>
+                        <button class="btn-submit-signup" type="submit" id="btn-submit-signup">Enviar</button>
+                        <button class="btn-reset-signup" type="reset" id="btn-cancel-signup">Cancelar</button>
                 </div>
+                <div id="help-tip-registration"></div>
             </form>
         </div>
     </div>
@@ -159,6 +164,7 @@
             </div>
         </div>
     </div>
+    <div class="c-cod-sms" id="c-cod-sms"></div>
     <div class="c-modal-pass-help" id="c-modal-pass-help">
         <div class="pop-pass-help" id="pop-pass-help">
             <div class="header-pass-help">
@@ -226,9 +232,8 @@
             </div>
         </div>
     </div>
-
-
-
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/vueAurora.js"></script>
     <script src="js/index-aurora.js"></script>
 </body>
 </html>
