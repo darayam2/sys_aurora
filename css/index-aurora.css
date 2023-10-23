@@ -1003,10 +1003,6 @@ input[type=number]::-webkit-outer-spin-button {
     border: 2px solid salmon;
 }
 
-.c-input-signup .in-last{
-    background-color: red;
-}
-
 .c-input-signup .in-last.miss{
     border: 2px solid salmon;
 }
