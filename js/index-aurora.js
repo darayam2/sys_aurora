@@ -29,8 +29,6 @@ let btnCloseRemUpUser = document.getElementById("btn-close-pop-rem-user")
 
 let remUserOkBtn = document.getElementById("btn-ok-pop-rem-user")
 let popCodSMS = document.getElementById("c-cod-sms")
-let inSmsCode1 = document.getElementById("input1")
-
 
 /* BEGIN Registration form Variables */
 let selectTypeIdRegForm = document.getElementById("type-id")
@@ -193,7 +191,6 @@ btnInitSession.addEventListener("click",()=>{
     }
 })
 
-
 let containerCodSMS =  `<div class="header">
                         <p>Enviamos un código de 6 dígitos a tu celular</p>
                         </div>
@@ -208,11 +205,44 @@ let containerCodSMS =  `<div class="header">
                         <input class="in-code" id="input5" type="number" min="0" max="9">
                         <input class="in-code" id="input6" type="number" min="0" max="9">
                         </div>
+                        <div class="text-cod-sms">El código estará activo por: <span class="min-cod-sms" id="min-cod-sms"></span><span class="sept-cod-sms" id="sept-cod-sms">:</span><span class="seg-cod-sms" id="seg-cod-sms"></span></div>
                         <div class="c-foot">
                         <h4>¿No te llegó el código o no funciona?</h4>
-                        <button type="button">Reenviar código</button>
+                        <button id="send-cod-sms" type="button">Reenviar código</button>
                         </div>`
 document.getElementById("c-cod-sms").innerHTML = containerCodSMS
+
+let resendSmsCode = document.getElementById("send-cod-sms")
+
+// Variables Globales
+let time = {};
+let clock = new Date()
+let interval = window.setInterval(showTime, 1) // Frecuencia de actualización
+
+function restartInterval(){
+    time = {}
+    clock = new Date()
+    interval = window.setInterval(showTime, 1)
+}
+
+function showTime(){
+    let now = new Date()
+    // Inserta los minutess almacenados en clock en el span con id minutes
+    time.minutes = document.getElementById('min-cod-sms')
+    time.minutes.innerHTML = ('0'+(clock.getMinutes()+15 - now.getMinutes())).toString().slice(-2)
+    // Inserta los seconds almacenados en clock en el span con id segundo
+    time.seconds = document.getElementById('seg-cod-sms')
+    time.seconds.innerHTML = ('0'+(59-now.getSeconds())).toString().slice(-2)
+    if(time.minutes.innerHTML==='00' && time.seconds.innerHTML==='00'){
+        window.clearInterval(interval)
+    }
+}
+
+
+resendSmsCode.addEventListener('click',function(){
+    restartInterval()
+})
+
 
 remUserOkBtn.addEventListener('click',function(){
     popRemPopUpUser.classList.remove("active")
@@ -235,7 +265,8 @@ inSmsCodeGroup.forEach((input, index) => {
             inSmsCodeGroup[index-1].focus()
         }
     })
-});
+})
+
 
 /* BEGIN Register Form Validations */
 selectTypeIdRegForm.addEventListener('click',function(){
@@ -346,6 +377,53 @@ btnSubmitRegForm.addEventListener('click',function(){
         helpTipSignup.textContent = "Debes ingresar tu(s) apellido(s)"
         inputNameRegForm.classList.remove("miss")
         inputLastRegForm.classList.add("miss")
+    }
+    else if(inputMailRegForm.value == ""){
+        helpTipSignup.classList.add("active")
+        helpTipSignup.textContent = "Debes ingresar un correo electrónico válido para poder tener contacto contigo"
+        inputLastRegForm.classList.remove("miss")
+        inputMailRegForm.classList.add("miss")
+    }
+    else if(inputPass1RegForm.value == ""){
+        helpTipSignup.classList.add("active")
+        helpTipSignup.textContent = "Debes ingresar una contraseña de al menos 8 caracteres, con mayúsculas, minúsculas, caracteres especiales y números"
+        inputMailRegForm.classList.remove("miss")
+        inputPass1RegForm.classList.add("miss")
+    }
+    else if(inputPass2RegForm.value == ""){
+        helpTipSignup.classList.add("active")
+        helpTipSignup.textContent = "Debes volver a ingresar la misma contraseña"
+        inputPass1RegForm.classList.remove("miss")
+        inputPass2RegForm.classList.add("miss")
+    }
+    else if(inputPass1RegForm.value!=inputPass2RegForm.value){
+        helpTipSignup.classList.add("active")
+        helpTipSignup.textContent = "Las contraseñas no coinciden"
+        inputMailRegForm.classList.remove("miss")
+        inputPass1RegForm.classList.add("miss")
+        inputPass2RegForm.classList.add("miss")
+    }
+    else if(selectQuestionRegForm.value=="Selecciona una pregunta..."){
+        helpTipSignup.classList.add("active")
+        helpTipSignup.textContent = "Debes seleccionar una pregunta de la lista"
+        inputPass1RegForm.classList.remove("miss")
+        inputPass2RegForm.classList.remove("miss")
+        selectQuestionRegForm.classList.add("miss")
+    }
+    else if(inputAnswerRegForm.value==""){
+        helpTipSignup.classList.add("active")
+        helpTipSignup.textContent = "Debes ingresa la respuesta a la pregunta que elegiste de la lista"
+        selectQuestionRegForm.classList.remove("miss")
+        inputAnswerRegForm.classList.add("miss")
+    }
+    else if(inputTelRegForm.value==""){
+        helpTipSignup.classList.add("active")
+        helpTipSignup.textContent = "Por favor ingresa el número de tu teléfono celular para poder contactarnos contigo"
+        inputAnswerRegForm.classList.remove("miss")
+        inputTelRegForm.classList.add("miss")
+    }
+    else{
+        formElement.elements
     }
 })
 

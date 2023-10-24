@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+    #fecha {
+    line-height: 5em;
+    margin: 0 auto;      
+    text-align: center;
+    font-size: 250%;
+  }
+</style>
+</head>
+<body>
+  <div onload="showTime()">
+    <div id="fecha">
+      <span id="minutes"></span>:<span id="seconds"></span>
+    </div>
+  </div>
+  <script>
+  // Variables Globales
+  let time = {}; 
+  let clock = new Date()
+  let interval = window.setInterval(showTime, 1); // Frecuencia de actualización
+
+  function showTime(){
+    let now = new Date();
+    // Inserta los minutess almacenados en clock en el span con id minutes
+    time.minutes = document.getElementById('minutes');
+    time.minutes.innerHTML = ('0'+(clock.getMinutes()+10 - now.getMinutes())).toString().slice(-2)
+    // Inserta los seconds almacenados en clock en el span con id segundo
+    time.seconds = document.getElementById('seconds')
+    time.seconds.innerHTML = ('0'+(59-now.getSeconds())).toString().slice(-2)
+    if(time.minutes.innerHTML==='00' && time.seconds.innerHTML==='00'){
+      clearInterval(interval);
+    }
+  }
+  </script>
+</body>
+</html>
+

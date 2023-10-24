@@ -109,3 +109,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: bold;
 }
 
+.text-cod-sms, .min-cod-sms, .sept-cod-sms, .seg-cod-sms{
+    color: white;
+}
+

@@ -26,7 +26,7 @@ body{
     z-index: -1;
 }
 
-/*#background-video { display: none; } Se debe quitar esta linea*/
+#background-video { display: none; } /*Se debe quitar esta linea*/
 
 @media (max-width: 750px) {
   #background-video { display: none; }
@@ -991,18 +991,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-.c-input-signup.div-id .type-id.miss{
+.c-input-signup.div-id .type-id.miss, .in-id.miss{
     border: 2px solid salmon;
 }
 
-.c-input-signup.div-id .in-id.miss{
-    border: 2px solid salmon;
-}
-
-.c-input-signup .in-name.miss{
-    border: 2px solid salmon;
-}
-
-.c-input-signup .in-last.miss{
+.c-input-signup .in-name.miss, .in-last.miss, .in-mail.miss, .in-pass1.miss, .in-pass2.miss, .question.miss, .in-answer.miss, .in-tel.miss{
     border: 2px solid salmon;
 }
