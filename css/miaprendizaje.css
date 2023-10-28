@@ -163,6 +163,10 @@ a {text-decoration: none;
                     
             } 
 
+            .btn-valores a:hover{
+                background: rgb(248, 25, 210);
+            }
+
             .navegacion {background-color: #70a3c4;
                             flex: 1 1 100%;
             }
@@ -196,12 +200,38 @@ a {text-decoration: none;
                 height: auto;
             }
 
+
+
+            .logo-cierre {
+                background: linear-gradient(rgba(27, 39, 59, 0.9), rgba(1, 1, 8, 0.9));
+                position: relative;
+                height: 400px;
+                align-items:center;
+                font-weight: 5000;
+            }
+            .logo {
+                position: absolute;
+                align-items:center;
+            }
+            .logo-cierre img {
+                
+                align-items:center;
+                height: 300px;
+               margin-top: 100px;
+                
+            
+            }
+                
+
+
+
+
             
 
     .footer {background-color: #000;
             display: flex;
             justify-content: center;
-            margin-top: 10px;
+          
 }
         .foot {
             text-align: center;
@@ -213,6 +243,13 @@ a {text-decoration: none;
             text-transform: uppercase;
             padding: 0 10px;
             letter-spacing: 2px;
+        }
+        .foot h4{
+            color: #fff;
+            font-family: poppins;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
 @media all and (max-width: 1260px){
@@ -261,9 +298,7 @@ a {text-decoration: none;
 }
 
 @media all and (max-width: 650px){
-    .off {
-        display: none;
-        }
+    
     .nav a {font-size: 8px;
         }
         
