@@ -290,13 +290,13 @@ a {text-decoration: none;
             
 
             #conteItemsCarrusel {
-                height: 410px;
+                height: 800px;
                 overflow: hidden;
                 margin-top: 100px;
             }
             
             .itemCarrusel { 
-                height: 410px;
+                height: 800px;
                 position: relative;
             }
             
