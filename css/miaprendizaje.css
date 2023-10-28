@@ -98,7 +98,7 @@ a {text-decoration: none;
 
     .section {
         background: rgba(27, 39, 59);
-    display: flex;
+        display: flex;
 }
         .articulos {
             background: linear-gradient(rgba(27, 39, 59, 0.9), rgba(1, 1, 8, 0.9));
