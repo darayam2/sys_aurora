@@ -205,20 +205,24 @@ a {text-decoration: none;
             
               .container-text h1 {
                 font-size: 50px;
-                
+                margin-bottom: 30px;
               }
 
             .text {
                 background-color: rgb(46, 210, 155);
+               
                 text-align: center;
-                padding: 30px 150px 10px;
+                padding: 30px 150px 30px;
                 color: #fff;
                 font-size: 60px;
                 font-family: poppins;
                 text-align: center;
                 
             }
+            h5 {
+                margin-bottom: 30px;
             
+            }
           
             
             .btn-valores {
@@ -431,7 +435,11 @@ a {text-decoration: none;
             }
             .text h5 {
                 font-size: 18px;
-            }    
+            }   
+            h5 {
+                margin-bottom: 20px;
+            
+            } 
 
 } 
 
@@ -469,6 +477,10 @@ a {text-decoration: none;
     .text h5 {
         font-size: 15px;
     }
+    h5 {
+        margin-bottom: 15px;
+    
+    }
 }
 
 @media all and (max-width: 650px){
@@ -501,6 +513,10 @@ a {text-decoration: none;
     }
     .text h5 {
         font-size: 12px;
+    }
+    h5 {
+        margin-bottom: 15px;
+    
     }
     .btn-valores {
         display: block;
@@ -552,6 +568,10 @@ a {text-decoration: none;
     .text h5 {
         font-size: 10px;
     }
+    h5 {
+        margin-bottom: 10px;
+    
+    }
     .btn-valores {
         display: block;
         text-align: center;
@@ -602,6 +622,10 @@ a {text-decoration: none;
     }
     .text h5 {
         font-size: 10px;
+    }
+    h5 {
+        margin-bottom: 10px;
+    
     }
     .btn-valores a {
         font-size: 15px;
