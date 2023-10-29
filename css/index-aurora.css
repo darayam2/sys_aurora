@@ -26,7 +26,7 @@ body{
     z-index: -1;
 }
 
-#background-video { display: none; } /*Se debe quitar esta linea*/
+/* #background-video { display: none; } Se debe quitar esta linea */
 
 @media (max-width: 750px) {
   #background-video { display: none; }

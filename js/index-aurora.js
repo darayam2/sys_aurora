@@ -46,6 +46,22 @@ let btnCancelRegForm = document.getElementById("btn-reset-signup")
 let helpTipSignup = document.getElementById("help-tip-registration")
 /* END Registration form Variables */
 
+/* BEGIN Consumo API*/
+url = 'https://jsonplaceholder.typicode.com/users'
+let userData = []
+fetch(url)
+    .then(data=>data.json())
+    .then(data=>{
+        data.forEach((item)=>{
+            userData.push(item)
+        })
+    .catch(error=>console.log("Error encontrado:",error))
+})
+console.log(userData)
+
+
+/* END Consumo API*/
+
 /* BEGIN registration form help buttons actions*/
 const btnsHelpRegForm = document.getElementsByClassName("icon-help")
 for(let i=0; i< btnsHelpRegForm.length; i++){
@@ -172,16 +188,14 @@ inputPass.addEventListener('click', function(){
     helpTip.classList.remove("active")
 })
 
-
-
-btnInitSession.addEventListener("click",()=>{
+//btnInitSession.addEventListener('click', function(){
+function initSession(){
     if(inputUser.value == "" && inputPass.value == ""){
         helpTip.classList.add("active")
         helpTip.textContent = "Debes ingresar el usuario y la contraseña"
     }
     else if(inputUser.value == "" && inputPass.value != "")
     {
-        alert("Debes ingresar el usuario")
         helpTip.classList.add("active")
         helpTip.textContent = "Debes ingresar el usuario"
     }
@@ -189,7 +203,46 @@ btnInitSession.addEventListener("click",()=>{
         helpTip.classList.add("active")
         helpTip.textContent = "Debes ingresar la contraseña"
     }
-})
+    else{
+        let userFounded=[]
+        function buscarEmail(email) {
+            userData.forEach((item)=>{
+                if(item.email== email){
+                    userFounded.push(item.id,email,item.username)
+                    console.log("userFounded",userFounded)
+                }
+            })
+            return userFounded
+        }
+        let user=buscarEmail(inputUser.value)
+        console.log("user",user)
+        if (user.length == 0){
+            helpTip.classList.add("active")
+            helpTip.textContent = "Usuario no registrado, por favor intenta nuevamente. "
+        }
+        else if(user!=undefined && inputPass.value!= userFounded[2]){
+            helpTip.classList.add("active")
+            helpTip.textContent =("Contraseña incorrecta, por favor verifica e intenta nuevamente")
+        }
+        else
+        {
+            let usersType = []
+            fetch("config/config.json")
+            .then(data=>data.json())
+            .then(data=>{
+                data.forEach((item)=>{
+                    if(user[0]==item.id){
+                        if(item.user_type==="admin")
+                            window.location="admin-page.html"
+                        else
+                            window.location="miaprendizaje.html"                    }
+                })
+            .catch(error=>console.log("Error encontrado:",error))
+            })
+        }
+    }
+}
+
 
 let containerCodSMS =  `<div class="header">
                         <p>Enviamos un código de 6 dígitos a tu celular</p>

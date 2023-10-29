@@ -15,7 +15,7 @@
     <title>Sistema Aurora</title>
 </head>
 <body>
-    <video  id="background-video" autoplay loop muted v-html="video">
+    <video  id="background-video" autoplay loop muted>
         <source v-bind:src="src" v-bind:type="type">
     </video>
     <!--<video id="background-video" autoplay loop muted>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="c-login-btn">
-                        <button class="btn" id="btn-init-session" type="submit" onclick="initSession();">Iniciar Sesión</button>
+                        <button class="btn" id="btn-init-session" type="submit" onclick="initSession()">Iniciar Sesión</button>
                     </div>
                 </div>
             </form>
