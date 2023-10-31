@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Poppins:wght@400;500&family=Roboto+Neon&display=swap');
+
+.principal-container{
+    display: flex;
+    justify-content: center;
+}
+
+.principal-container p{
+    color: black;
+    font-size: 1em;
+    font-weight: bolder;
+    font-family: 'Poppins', 'Roboto', 'Dangrek', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 5%;
+}
+
+.imagen-inicio{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+
+@media only screen and (max-width: 575px) {
+    .imagen-inicio img{
+        width: 100%;
+    }
+    
+}
+/* Small devices (600px and up) */
+@media only screen and (min-width: 575px) {
+    .imagen-inicio img{
+        height: 100%;
+    }
+}
+/* Medium devices (768px and up) */
+@media only screen and (min-width: 768px) {
+    .imagen-inicio img{
+        height: 120%;
+    }
+}

@@ -235,7 +235,7 @@ function initSession(){
                         if(item.user_type==="admin")
                             window.location="admin-page.html"
                         else
-                            window.location="miaprendizaje.html"                    }
+                            window.location="nosotros2.html"                    }
                 })
             .catch(error=>console.log("Error encontrado:",error))
             })

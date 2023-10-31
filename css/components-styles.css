@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Roboto', 'Dangrek', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-color:rgba(222, 253, 253, 0.6);
+    padding-bottom: 5.5em;
+    min-height: 100vh;
+}
+
+header{
+    width: 100%;
+    border-bottom: 0.4em solid rgb(36, 145, 145);
+}
+
+footer{
+    background-color: rgb(27, 39, 59);
+    border-top: 0.4em solid rgb(36, 145, 145);
+    padding: 1em 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 575px) {
+    header{
+        justify-content: center;
+        align-items: center;
+    }
+
+    #header-aurora{
+        background: rgb(27, 39, 59);
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-header{
+        width: 5em;
+    }
+
+    .nav-aurora{
+        justify-content: start;
+    }
+
+    .nav-aurora nav > a{
+        color: rgb(119, 240, 240);
+        margin: 0.5em;
+    }
+
+    .nav-bar > a > i{
+        font-size: large;
+    }
+
+    .nav-bar > a > span.off{
+        display: none;
+        margin: 0;
+    }
+    
+    .footer-aurora{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-aurora > div > a{
+        color: rgb(119, 240, 240);
+        margin: 0.5em;
+    }
+
+    .footer-aurora > div > a > i{
+        font-size: large;
+    }
+    .footer-aurora > div > p{
+        color: rgb(119, 240, 240);
+        font-size: small;
+        font-weight: bold;
+    }
+
+    .footer-aurora > div > p.screen{
+        display: none;
+    }
+
+    .footer-aurora > div > p.screen575{
+        display: block;
+    }
+
+    .footer-aurora > div > a > span.off{
+        display: none;
+    }
+    
+}
+/* Small devices (600px and up) */
+@media only screen and (min-width: 575px) {
+    header{
+        justify-content: center;
+        align-items: center;
+    }
+
+    #header-aurora{
+        background: rgb(27, 39, 59);
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-header{
+        width: 6em;
+    }
+
+    .nav-aurora{
+        justify-content: start;
+    }
+
+    .nav-bar{
+        padding-top: 0;
+    }
+
+    
+    .nav-aurora nav > a{
+        margin: 0.5em;
+        color: white;
+        font-size: medium;
+        font-weight: 400;
+        text-decoration: none;
+    }
+
+    .nav-bar > a > i{
+        font-size: medium;
+        color: rgb(119, 240, 240);
+        margin: 0.5em;
+    }
+
+    .footer-aurora{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-aurora > div > a{
+        color: rgb(119, 240, 240);
+        margin: 0.5em;
+        font-size: medium;
+        font-weight: 400;
+    }
+
+    .footer-aurora > div > a > i{
+        font-size: 1.5em;
+        padding-right: 0.6em;
+    }
+    .footer-aurora > div > p{
+        color: rgb(119, 240, 240);
+        font-size: medium;
+        font-weight: 400;
+    }
+
+    .footer-aurora > div > p.screen575{
+        display: none;
+    }
+
+    .footer-aurora > div > a > span.off{
+        display: none;
+    }
+
+    .footer-aurora > div > p.screen{
+        display: block;
+    }
+}
+/* Medium devices (768px and up) */
+@media only screen and (min-width: 768px) {
+    #header-aurora{
+        height: 100px;
+        flex-direction: row;
+        justify-content: start;
+    }
+
+    .logo-header{
+        width: 4.5em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .nav-aurora nav > a{
+        margin: 1em;
+        color: white;
+        font-size: medium;
+        text-decoration: none;
+    }
+
+    .nav-bar > a > i{
+        font-size: medium;
+        color: rgb(119, 240, 240);
+        margin: 0.5em;
+    }
+    .footer-aurora > div > p.screen{
+        display: block;
+    }
+
+    .footer-aurora > div > p.screen575{
+        display: none;
+    }
+
+}
+
+/* Large devices (992px and up) */
+@media only screen and (min-width: 992px) {
+    #header-aurora{
+        height: 80px;
+    }
+
+    .logo-header{
+        width: 5em;
+        margin-top: 0.5em;
+    }
+
+}
+/* Extra large devices (1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .example {background: pink;}
+}
+
+/* Súper Extra large devices (1200px and up) */
+@media only screen and (min-width: 1400px) {
+    .example {background: pink;}
+}
